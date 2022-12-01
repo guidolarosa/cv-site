@@ -1,0 +1,12 @@
+body[data-theme='dark'] {
+  background: black;
+  color: white;
+}
+
+body[data-theme='dark'] a {
+  color: var(--primary-dark);
+}
+
+body[data-theme='dark'] .work-item h3 {
+  color: var(--primary-dark);
+}
