@@ -1,19 +1,21 @@
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url("./../fonts/variable/JetBrainsMono[wght].ttf"); }
-
+  font-family: "JetBrains Mono";
+  src: url("./../fonts/variable/JetBrainsMono[wght].ttf");
+}
 :root {
   --column-size: calc(100vw / 12);
   --background-light: white;
   --primary-light: slateblue;
   --primary-dark: rgb(130, 119, 208);
-  --background-dark: rgb(44, 43, 51); }
+  --background-dark: rgb(44, 43, 51);
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'JetBrains Mono'; }
+  font-family: "JetBrains Mono";
+}
 
 body {
   display: flex;
@@ -21,17 +23,20 @@ body {
   height: 100vh;
   font-size: 12px;
   background: var(--background-light);
-  transition: 0.2s ease-in-out all; }
+  transition: 0.2s ease-in-out all;
+}
 
 p {
   margin-bottom: 1.2rem;
   line-height: 1.2rem;
   opacity: 0.8;
-  font-size: 0.7rem; }
+  font-size: 0.7rem;
+}
 
 a {
   color: var(--primary-light);
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 .cv-content {
   width: calc(var(--column-size) * 12);
@@ -40,123 +45,158 @@ a {
   grid-template-rows: 1fr;
   padding: 2rem;
   max-height: 100vh;
-  column-gap: 2rem; }
+  column-gap: 2rem;
+}
 
 .single-column,
 .double-column {
-  overflow: auto; }
+  overflow: auto;
+}
 
 .double-column {
   height: 100%;
   display: flex;
-  flex-direction: column; }
-  .double-column .section-body {
-    height: 100%;
-    column-fill: auto;
-    columns: 2;
-    column-gap: 2rem; }
+  flex-direction: column;
+}
+.double-column .section-body {
+  height: 100%;
+  column-fill: auto;
+  columns: 2;
+  column-gap: 2rem;
+}
 
-body[data-theme='dark'] {
+body[data-theme=dark] {
   background: black;
-  color: white; }
+  color: white;
+}
 
-body[data-theme='dark'] a {
-  color: var(--primary-dark); }
+body[data-theme=dark] a {
+  color: var(--primary-dark);
+}
 
-body[data-theme='dark'] .work-item h3 {
-  color: var(--primary-dark); }
+body[data-theme=dark] .work-item h3 {
+  color: var(--primary-dark);
+}
 
 /* ALL SECTIONS */
 .section-title {
   margin-bottom: 1rem;
   border-bottom: 1px solid lightgray;
-  padding-bottom: 0.6rem; }
-  .section-title h2 {
-    font-size: 2.2rem; }
+  padding-bottom: 0.6rem;
+}
+.section-title h2 {
+  font-size: 2.2rem;
+}
 
 /* MAIN SECTION */
 #main-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
-  #main-section img {
-    margin-bottom: 1rem;
-    width: 10rem; }
-  #main-section .section-heading {
-    margin-bottom: 1rem; }
-    #main-section .section-heading h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem; }
-    #main-section .section-heading h2 {
-      font-size: 1.2rem;
-      opacity: 0.6; }
-  #main-section .bio {
-    margin-bottom: auto; }
-  #main-section #change-theme {
-    margin-top: 1rem;
-    cursor: pointer;
-    color: var(--primary-light);
-    text-decoration: underline; }
+  justify-content: space-between;
+}
+#main-section img {
+  margin-bottom: 1rem;
+  width: 10rem;
+}
+#main-section .section-heading {
+  margin-bottom: 1rem;
+}
+#main-section .section-heading h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+#main-section .section-heading h2 {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+#main-section .bio {
+  margin-bottom: auto;
+}
+#main-section #change-theme {
+  margin-top: 1rem;
+  cursor: pointer;
+  color: var(--primary-light);
+  text-decoration: underline;
+}
 
 /* WORK HISTORY */
 .work-item {
   margin-bottom: 2.8rem;
-  -webkit-column-break-inside: avoid; }
-  .work-item p {
-    line-height: 1.4rem; }
-  .work-item h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.4rem;
-    color: slateblue; }
-  .work-item h4 {
-    font-size: 1rem;
-    opacity: 0.7;
-    margin-bottom: 0.4rem;
-    line-height: 1.4rem; }
-  .work-item .period {
-    font-size: 0.6rem;
-    opacity: 0.7;
-    margin-bottom: 0.4rem;
-    line-height: 1.4rem;
-    /* background: dodgerblue; */
-    /* color: white; */
-    border: 0.1rem solid gray;
-    padding: 0 0.4rem;
-    display: inline-block;
-    border-radius: 0.2rem; }
+  -webkit-column-break-inside: avoid;
+}
+.work-item p {
+  line-height: 1.4rem;
+}
+.work-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: slateblue;
+}
+.work-item h4 {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+  line-height: 1.4rem;
+}
+.work-item .period {
+  font-size: 0.6rem;
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+  line-height: 1.4rem;
+  /* background: dodgerblue; */
+  /* color: white; */
+  border: 0.1rem solid gray;
+  padding: 0 0.4rem;
+  display: inline-block;
+  border-radius: 0.2rem;
+}
 
 /* SKILLS */
 .skill {
-  margin-bottom: 1rem; }
-  .skill h4 {
-    margin-bottom: 0.4rem; }
-  .skill .skill-bar {
-    height: 1.2rem;
-    width: 100%;
-    border: 1px solid var(--primary-light); }
-    .skill .skill-bar .skill-level {
-      background: var(--primary-light);
-      height: calc(100% - 2px);
-      transform: translateX(1px) translateY(1px);
-      width: 0px;
-      transition: 0.2s ease-in-out all; }
+  margin-bottom: 1rem;
+}
+.skill h4 {
+  margin-bottom: 0.4rem;
+}
+.skill .skill-bar {
+  height: 1.2rem;
+  width: 100%;
+  border: 1px solid var(--primary-light);
+}
+.skill .skill-bar .skill-level {
+  background: var(--primary-light);
+  height: calc(100% - 2px);
+  transform: translateX(1px) translateY(1px);
+  width: 0px;
+  transition: 0.2s ease-in-out all;
+}
 
-.language {
-  margin-bottom: 1rem; }
-  .language h2 {
-    margin-bottom: 0.4rem; }
-  .language p {
-    margin-bottom: 0; }
+.languages {
+  margin-top: 2rem;
+}
+.languages .language {
+  margin-bottom: 1rem;
+}
+.languages .language h2 {
+  margin-bottom: 0.4rem;
+}
+.languages .language p {
+  margin-bottom: 0;
+}
 
 @media screen and (max-width: 720px) {
   .cv-content {
     padding: 1rem;
     grid-template-columns: 1fr;
-    grid-template-rows: auto; }
+    grid-template-rows: auto;
+  }
   .single-column,
   .double-column {
     width: 100%;
     overflow: unset;
-    margin-bottom: 4rem; }
+    margin-bottom: 4rem;
+  }
   .double-column .section-body {
-    columns: 1; } }
+    columns: 1;
+  }
+}

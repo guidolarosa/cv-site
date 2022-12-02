@@ -1,5 +1,6 @@
 const pug = require('pug');
 const fs = require('fs');
+const sass = require('sass');
 
 const workData = [
   {
@@ -44,7 +45,14 @@ const workData = [
     ]
   },
 
-]
+];
+
+const sassResult = sass.compile('./src/scss/stylesheet.scss');
+
+fs.writeFileSync(
+  './css/stylesheet.css', 
+  sassResult.css
+);
 
 fs.writeFileSync(
   'index.html', 

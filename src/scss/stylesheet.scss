@@ -99,13 +99,16 @@
   }
 }
 
-.language {
-  margin-bottom: 1rem;
-  h2 {
-    margin-bottom: 0.4rem;
-  }
-  p {
-    margin-bottom: 0;
+.languages {
+  margin-top: 2rem;
+  .language {
+    margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 0.4rem;
+    }
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 
