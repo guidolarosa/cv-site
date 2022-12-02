@@ -60,3 +60,5 @@ fs.writeFileSync(
     workData: workData
   })
 );
+
+process.exit();
