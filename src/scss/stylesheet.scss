@@ -1,0 +1,127 @@
+@import "fonts.scss";
+@import "general.scss";
+@import "dark.scss";
+
+/* ALL SECTIONS */
+
+.section-title {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 0.6rem;
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* MAIN SECTION */
+
+#main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  img {
+    margin-bottom: 1rem;
+    width: 10rem;
+  }
+  .section-heading {
+    margin-bottom: 1rem;
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+  }
+  .bio {
+    margin-bottom: auto;
+  }
+  #change-theme {
+    margin-top: 1rem;
+    cursor: pointer;
+    color: var(--primary-light);
+    text-decoration: underline;
+  }
+}
+
+/* WORK HISTORY */
+
+.work-item {
+  margin-bottom: 2.8rem;
+  -webkit-column-break-inside: avoid;
+  p {
+    line-height: 1.4rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    color: slateblue;
+  }
+  h4 {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+    line-height: 1.4rem;
+  }
+  .period {
+    font-size: 0.6rem;
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+    line-height: 1.4rem;
+    /* background: dodgerblue; */
+    /* color: white; */
+    border: 0.1rem solid gray;
+    padding: 0 0.4rem;
+    display: inline-block;
+    border-radius: 0.2rem;
+  }
+}
+
+/* SKILLS */
+
+.skill {
+  margin-bottom: 1rem;
+  h4 {
+    margin-bottom: 0.4rem;
+  }
+  .skill-bar {
+    height: 1.2rem;
+    width: 100%;
+    border: 1px solid var(--primary-light);
+    .skill-level {
+      background: var(--primary-light);
+      height: calc(100% - 2px);
+      transform: translateX(1px) translateY(1px);
+      width: 0px;
+      transition: 0.2s ease-in-out all;
+    }
+  }
+}
+
+.language {
+  margin-bottom: 1rem;
+  h2 {
+    margin-bottom: 0.4rem;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .cv-content {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .single-column,
+  .double-column {
+    width: 100%;
+    overflow: unset;
+    margin-bottom: 4rem;
+  }
+  .double-column .section-body {
+    columns: 1;
+  }
+}

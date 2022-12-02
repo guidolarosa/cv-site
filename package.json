@@ -1,0 +1,28 @@
+{
+  "name": "online-cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass src/scss/stylesheet.scss css/stylesheet.css",
+    "start": "nodemon -e scss,pug \"yarn run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guidolarosa/cv-site.git"
+  },
+  "author": "Guido La Rosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guidolarosa/cv-site/issues"
+  },
+  "homepage": "https://github.com/guidolarosa/cv-site#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "pug": "^3.0.2"
+  }
+}
