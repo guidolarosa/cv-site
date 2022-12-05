@@ -25,6 +25,8 @@
     "sass": "^1.56.1"
   },
   "dependencies": {
+    "@node-minify/clean-css": "^7.1.0",
+    "@node-minify/core": "^7.1.0",
     "fs-extra": "^11.1.0",
     "pug": "^3.0.2"
   }

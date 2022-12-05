@@ -1,0 +1,33 @@
+/* SKILLS */
+
+.skill {
+  margin-bottom: 1rem;
+  h4 {
+    margin-bottom: 0.4rem;
+  }
+  .skill-bar {
+    height: 1.2rem;
+    width: 100%;
+    border: 1px solid var(--primary);
+    .skill-level {
+      background: var(--primary);
+      height: calc(100% - 2px);
+      transform: translateX(1px) translateY(1px);
+      width: 0px;
+      transition: 0.5s ease-in-out all;
+    }
+  }
+}
+
+.languages {
+  margin-top: 2rem;
+  .language {
+    margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 0.4rem;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

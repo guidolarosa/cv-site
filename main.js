@@ -2,29 +2,45 @@ const pug = require('pug');
 const fs = require('fs-extra');
 const sass = require('sass');
 const browserify = require('browserify');
+const minify = require('@node-minify/core')
+const cleanCSS = require('@node-minify/clean-css')
 
 const workData = require('./src/data/work-data.js');
 const socialLinks = require('./src/data/social-links.js');
 const personalInfo = require('./src/data/personal-info.js');
 const skills = require('./src/data/skills');
+const languages = require('./src/data/languages');
 
 fs.mkdirSync('./public', {recursive: true});
 
 const sassResult = sass.compile('./src/scss/stylesheet.scss');
 fs.writeFileSync(
   './public/stylesheet.css', 
-  sassResult.css
+  sassResult.css,
 );
 
-fs.writeFileSync(
-  './public/index.html', 
-  pug.renderFile('./src/pug/index.pug', {
-    workData: workData,
-    socialLinks: socialLinks,
-    personalInfo: personalInfo,
-    skills: skills
-  })
-);
+const renderPug = (pageName) => {
+  fs.writeFileSync(
+    './public/' + pageName + '.html', 
+    pug.renderFile('./src/pug/' + pageName + '.pug', {
+      workData: workData,
+      socialLinks: socialLinks,
+      personalInfo: personalInfo,
+      skills: skills,
+      languages: languages
+    })
+  );
+}
+
+minify({
+  compressor: cleanCSS,
+  input: './public/stylesheet.css',
+  output: './public/stylesheet.css',
+  callback: () => {}
+})
+
+renderPug('index');
+renderPug('cover-letter');
 
 const b = browserify();
 b.add('./src/js/main.js');

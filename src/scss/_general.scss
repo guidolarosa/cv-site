@@ -5,7 +5,6 @@
   --font: rgb(44, 43, 51);
 }
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,10 +15,13 @@
 body {
   display: flex;
   justify-content: center;
-  height: 100vh;
   font-size: 12px;
   background: var(--background);
   transition: 0.2s ease-in-out all;
+}
+
+.cv-body {
+  height: 100vh;
 }
 
 p {
@@ -58,5 +60,70 @@ a {
     column-fill: auto;
     columns: 2;
     column-gap: 2rem;
+  }
+}
+
+/* ALL SECTIONS */
+
+.section-title {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 0.6rem;
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 1480px) {
+  .cv-content {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .double-column .section-body {
+    columns: 1;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .single-column,
+  .double-column {
+    overflow: unset;
+  }
+  .cv-content {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      'sidebar work'
+      'sidebar education'
+      'sidebar skills';
+    column-gap: 2rem;
+    #main-section {
+      grid-area: sidebar;
+    }
+    #work-history {
+      grid-area: work
+    }
+    #education {
+      grid-area: education
+    }
+    #skills {
+      grid-area: skills
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .cv-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .single-column,
+  .double-column {
+    width: 100%;
+    overflow: unset;
+    margin-bottom: 4rem;
+  }
+  .double-column .section-body {
+    columns: 1;
   }
 }

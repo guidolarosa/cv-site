@@ -1,0 +1,30 @@
+/* WORK HISTORY */
+
+.work-item {
+  margin-bottom: 2.8rem;
+  -webkit-column-break-inside: avoid;
+  p {
+    line-height: 1.4rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    color: var(--primary);
+  }
+  h4 {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+    line-height: 1.4rem;
+  }
+  .period {
+    font-size: 0.6rem;
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+    line-height: 1.4rem;
+    border: 0.1rem solid gray;
+    padding: 0 0.4rem;
+    display: inline-block;
+    border-radius: 0.2rem;
+  }
+}
