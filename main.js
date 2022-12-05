@@ -10,6 +10,7 @@ const socialLinks = require('./src/data/social-links.js');
 const personalInfo = require('./src/data/personal-info.js');
 const skills = require('./src/data/skills');
 const languages = require('./src/data/languages');
+const education = require('./src/data/education');
 
 fs.mkdirSync('./public', {recursive: true});
 
@@ -27,7 +28,8 @@ const renderPug = (pageName) => {
       socialLinks: socialLinks,
       personalInfo: personalInfo,
       skills: skills,
-      languages: languages
+      languages: languages,
+      education: education
     })
   );
 }

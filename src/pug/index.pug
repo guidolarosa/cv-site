@@ -14,11 +14,11 @@ body(data-theme="dark").cv-body
         each paragraph, index in personalInfo.bio
           if (index < 2)
             p=paragraph
+        a(href="./cover-letter.html") Read full cover letter
       section.links
         each link in socialLinks
           a(href=link.url)=link.name
-      #change-theme
-        | Change Theme
+      #change-theme Change Theme
     section#work-history.double-column
       section.section-title
         h2 Work History
@@ -34,12 +34,8 @@ body(data-theme="dark").cv-body
       section.section-title
         h2 Education
       section
-        p
-          | After finishing school I had a deep interest in sound and music, so I studied one year of Sound Design.
-        p
-          | After that I got accepted in ENERC, which is the National Cinema School. I learned a lot about the industry and Sound Design for Cinema, which was my specialization, but found out that I was not very interested in this kind of career.
-        p
-          | Around that time I started to learn to code. A friend introduced me to Frontend Development and I started an intense self-learning path diving deep into web technologies. I learned about the basics (HTML, CSS, JS) and then I started working on some real world projects, which taught me a lot in a short period of time.
+        each paragraph in education
+          p=paragraph
     section#skills.single-column
       section.section-title
         h2 Skills
@@ -51,11 +47,10 @@ body(data-theme="dark").cv-body
               .skill-bar(value=skill.level)
                 .skill-level
         section.languages
-          .language
-            h2 Spanish / Castellano
-            p Native
-          .language
-            h2 English
-            p Upper Intermediate (B2) Level
-            p I can have a fluid conversation about technical topics.
+          each language in languages
+            .language
+              h2=language.name
+              p=language.level
+              if (language.detail)
+                p=language.detail
   script(src='./main.js' type='text/javascript')
