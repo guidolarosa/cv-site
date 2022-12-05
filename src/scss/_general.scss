@@ -1,9 +1,8 @@
 :root {
   --column-size: calc(100vw / 12);
-  --background-light: white;
-  --primary-light: slateblue;
-  --primary-dark: rgb(130, 119, 208);
-  --background-dark: rgb(44, 43, 51);
+  --background: white;
+  --primary: slateblue;
+  --font: rgb(44, 43, 51);
 }
 
 
@@ -19,7 +18,7 @@ body {
   justify-content: center;
   height: 100vh;
   font-size: 12px;
-  background: var(--background-light);
+  background: var(--background);
   transition: 0.2s ease-in-out all;
 }
 
@@ -31,7 +30,7 @@ p {
 }
 
 a {
-  color: var(--primary-light);
+  color: var(--primary);
   text-decoration: underline;
 }
 

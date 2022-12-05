@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -e scss,pug",
+    "start": "nodemon --ignore ./public/ -e scss,pug,js",
     "build": "node main.js"
   },
   "repository": {
@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/guidolarosa/cv-site#readme",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
     "sass": "^1.56.1"
   },
   "dependencies": {
+    "fs-extra": "^11.1.0",
     "pug": "^3.0.2"
   }
 }

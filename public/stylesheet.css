@@ -1,13 +1,12 @@
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("./../fonts/variable/JetBrainsMono[wght].ttf");
+  src: url("./fonts/variable/JetBrainsMono[wght].ttf");
 }
 :root {
   --column-size: calc(100vw / 12);
-  --background-light: white;
-  --primary-light: slateblue;
-  --primary-dark: rgb(130, 119, 208);
-  --background-dark: rgb(44, 43, 51);
+  --background: white;
+  --primary: slateblue;
+  --font: rgb(44, 43, 51);
 }
 
 * {
@@ -22,7 +21,7 @@ body {
   justify-content: center;
   height: 100vh;
   font-size: 12px;
-  background: var(--background-light);
+  background: var(--background);
   transition: 0.2s ease-in-out all;
 }
 
@@ -34,7 +33,7 @@ p {
 }
 
 a {
-  color: var(--primary-light);
+  color: var(--primary);
   text-decoration: underline;
 }
 
@@ -65,16 +64,29 @@ a {
   column-gap: 2rem;
 }
 
-body[data-theme=dark] {
-  background: black;
-  color: white;
+:root {
+  --primary-dark: rgb(130, 119, 208);
+  --background-dark: rgb(44, 43, 51);
+  --font-dark: white;
 }
 
+body[data-theme=dark] {
+  background: black;
+  color: var(--font-dark);
+}
 body[data-theme=dark] a {
   color: var(--primary-dark);
 }
-
 body[data-theme=dark] .work-item h3 {
+  color: var(--primary-dark);
+}
+body[data-theme=dark] .skill-bar {
+  border: 1px solid var(--primary-dark);
+}
+body[data-theme=dark] .skill-bar .skill-level {
+  background: var(--primary-dark);
+}
+body[data-theme=dark] #change-theme {
   color: var(--primary-dark);
 }
 
@@ -97,6 +109,7 @@ body[data-theme=dark] .work-item h3 {
 #main-section img {
   margin-bottom: 1rem;
   width: 10rem;
+  border-radius: 10rem;
 }
 #main-section .section-heading {
   margin-bottom: 1rem;
@@ -112,10 +125,22 @@ body[data-theme=dark] .work-item h3 {
 #main-section .bio {
   margin-bottom: auto;
 }
+#main-section .links a {
+  margin-right: 1rem;
+  display: inline-block;
+  position: relative;
+}
+#main-section .links a:before {
+  content: "/";
+  position: absolute;
+  left: -0.75rem;
+  color: var(--primary);
+  opacity: 0.7;
+}
 #main-section #change-theme {
   margin-top: 1rem;
   cursor: pointer;
-  color: var(--primary-light);
+  color: var(--primary);
   text-decoration: underline;
 }
 
@@ -130,7 +155,7 @@ body[data-theme=dark] .work-item h3 {
 .work-item h3 {
   font-size: 1.4rem;
   margin-bottom: 0.4rem;
-  color: slateblue;
+  color: var(--primary);
 }
 .work-item h4 {
   font-size: 1rem;
@@ -161,14 +186,14 @@ body[data-theme=dark] .work-item h3 {
 .skill .skill-bar {
   height: 1.2rem;
   width: 100%;
-  border: 1px solid var(--primary-light);
+  border: 1px solid var(--primary);
 }
 .skill .skill-bar .skill-level {
-  background: var(--primary-light);
+  background: var(--primary);
   height: calc(100% - 2px);
   transform: translateX(1px) translateY(1px);
   width: 0px;
-  transition: 0.2s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 
 .languages {

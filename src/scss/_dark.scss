@@ -1,12 +1,26 @@
+:root {
+  --primary-dark: rgb(130, 119, 208);
+  --background-dark: rgb(44, 43, 51);
+  --font-dark: white;
+}
+
 body[data-theme='dark'] {
   background: black;
-  color: white;
+  color: var(--font-dark);
+  a {
+    color: var(--primary-dark);
+  }
+  .work-item h3 {
+    color: var(--primary-dark);
+  }
+  .skill-bar {
+    border: 1px solid var(--primary-dark);
+    .skill-level {
+      background: var(--primary-dark)
+    }
+  }
+  #change-theme {
+    color: var(--primary-dark);
+  }
 }
 
-body[data-theme='dark'] a {
-  color: var(--primary-dark);
-}
-
-body[data-theme='dark'] .work-item h3 {
-  color: var(--primary-dark);
-}

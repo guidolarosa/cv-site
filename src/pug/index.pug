@@ -1,44 +1,22 @@
 doctype html
-include includes/head.pug
+include _includes/head.pug
 body(data-theme="dark")
   section.cv-content
     section#main-section.single-column
       section.section-heading
         img(src='./img/profile.png')
-        h1 Guido La Rosa
+        h1=personalInfo.name
         h2
-          | Frontend Developer 
-          br
-          |  UI / UX Developer
+          each role in personalInfo.roles
+            span=role 
+            br
       section.bio
-        p.
-          Hi! Mi name is Guido, and I'm a frontend developer from Buenos Aires, Argentina.
-        p.
-          I've fallen in love with code nearly seven years ago, although I&rsquo;ve always had a profound interest in the arts, technology and science. When I started my learning path, I decided that the field of frontend development was the one I should dive into, because of my deep interest in design and the visual arts, and because I became aware of the many uses and applications of these technologies and how they impact in people&rsquo;s lives.
-        a(href='#') Read my full cover letter
-        //
-          <p>
-          I consider myself to be a true team player. From the feedback I received in my previous jobs I feel like I can bring a lot to the table, both in terms of technical expertise and also in the area of soft skills. I was frequently told that I have great communication skills, and I’m very helpful and empathetic with others. I’m always willing to take the time and put the effort to bring the work we are delivering to the next level. Also, I’m very calm and approachable, which I believe are good qualities when working inside a team.
-          </p>
-          <p>
-          I believe my background in arts and design is what makes me stand out. Not only can I deliver high quality code using the latest tools, but I can also engage in a meaningful discussion about the visual design of the system, UX strategies and interaction design of the project we are working on.
-          </p>
-          <p>
-          On the more technical side, I consider myself right now to be mainly a React developer. I love the JS ecosystem and I’m always looking for new tools and libraries to bring more value to the work I do. Also I’m starting to learn tools related with 3D visualization and creative coding.
-          </p>
-          <p>
-          Hope we can work together and build something great!
-          </p>
+        each paragraph, index in personalInfo.bio
+          if (index < 2)
+            p=paragraph
       section.links
-        a(href='https://www.linkedin.com/in/guido-la-rosa/') LinkedIn
-        |         /
-        a(href='https://github.com/guidolarosa') Github
-        |         /
-        a(href='https://coyoteweb.studio/' aria-disabled='true') Coyote Web Studio
-        |         /
-        a Instagram
-        |         /
-        a(href='https://guidolarosa-blog.tumblr.com/') Illustrations
+        each link in socialLinks
+          a(href=link.url)=link.name
       #change-theme
         | Change Theme
     section#work-history.double-column
@@ -67,34 +45,11 @@ body(data-theme="dark")
         h2 Skills
       section.section-body
         section.technical-skills
-          .skill
-            h4 React
-            .skill-bar(value='80')
-              .skill-level
-          .skill
-            h4 NextJS
-            .skill-bar(value='80')
-              .skill-level
-          .skill
-            h4 JavaScript
-            .skill-bar(value='80')
-              .skill-level
-          .skill
-            h4 Git / Github
-            .skill-bar(value='80')
-              .skill-level
-          .skill
-            h4 Wordpress
-            .skill-bar(value='60')
-              .skill-level
-          .skill
-            h4 Figma
-            .skill-bar(value='70')
-              .skill-level
-          .skill
-            h4 Photoshop / Illustrator
-            .skill-bar(value='60')
-              .skill-level
+          each skill in skills
+            .skill
+              h4=skill.name
+              .skill-bar(value=skill.level)
+                .skill-level
         section.languages
           .language
             h2 Spanish / Castellano
@@ -103,4 +58,4 @@ body(data-theme="dark")
             h2 English
             p Upper Intermediate (B2) Level
             p I can have a fluid conversation about technical topics.
-script(src='./src/js/main.js' type='text/javascript')
+script(src='./main.js' type='text/javascript')
