@@ -4,7 +4,7 @@ body(data-theme="dark").cv-body
   section.cv-content
     section#main-section.single-column
       section.section-heading
-        img(src='./img/profile.png')
+        img(src='./img/' + personalInfo.imageFileName)
         h1=personalInfo.name
         h2
           each role in personalInfo.roles
