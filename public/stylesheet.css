@@ -68,6 +68,16 @@ a {
   text-decoration: underline;
 }
 
+@keyframes fadeIn {
+  0% {
+    filter: blur(20px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
 .cv-content {
   width: calc(var(--column-size) * 12);
   display: grid;
@@ -78,6 +88,7 @@ a {
   column-gap: 2rem;
   position: relative;
   z-index: 2;
+  animation: fadeIn ease-out 0.25s forwards;
 }
 
 .single-column,

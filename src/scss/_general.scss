@@ -60,6 +60,18 @@ a {
   color: var(--primary);
   text-decoration: underline;
 }
+@keyframes fadeIn {
+  0% {
+    filter: blur(20px); 
+    opacity: 0; 
+    // transform: scale(0.9);
+  }
+  100% {
+    filter: blur(0); 
+    opacity: 1; 
+    // transform: scale(1);
+  }
+}
 
 .cv-content {
   width: calc(var(--column-size) * 12);
@@ -71,6 +83,7 @@ a {
   column-gap: 2rem;
   position: relative;
   z-index: 2;
+  animation: fadeIn ease-out 0.25s forwards;
 }
 
 .single-column,
