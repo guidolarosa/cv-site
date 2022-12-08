@@ -119,7 +119,7 @@ a {
   .cv-content {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  .double-column .section-body {
+  .double-column .body-wrapper .section-body {
     columns: 1;
   }
 }
