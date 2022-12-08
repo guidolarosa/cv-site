@@ -24,5 +24,15 @@ body[data-theme='dark'] {
       color: var(--primary-dark);
     }
   }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: gray; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: white; 
+  }
 }
 

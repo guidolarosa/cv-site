@@ -13,12 +13,24 @@ const languages = require('./src/data/languages');
 const education = require('./src/data/education');
 const seo = require('./src/data/seo');
 
+fs.emptyDirSync('./public')
+
 fs.mkdirSync('./public', {recursive: true});
 
 const sassResult = sass.compile('./src/scss/stylesheet.scss');
 fs.writeFileSync(
   './public/stylesheet.css', 
   sassResult.css,
+  {
+    callback: () => {
+      minify({
+        compressor: cleanCSS,
+        input: './public/stylesheet.css',
+        output: './public/stylesheet.css',
+        callback: () => {}
+      })
+    }
+  }
 );
 
 const renderPug = (pageName) => {
@@ -36,15 +48,9 @@ const renderPug = (pageName) => {
   );
 }
 
-minify({
-  compressor: cleanCSS,
-  input: './public/stylesheet.css',
-  output: './public/stylesheet.css',
-  callback: () => {}
-})
 
 renderPug('index');
-renderPug('cover-letter');
+renderPug('bio');
 
 const b = browserify();
 b.add('./src/js/main.js');

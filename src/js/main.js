@@ -21,5 +21,4 @@ document.addEventListener('DOMContentLoaded', () => {
     let formated = 'calc(' + value + '% - 2px)';
     skillBarFill.style.width = formated;
   }
-
 });

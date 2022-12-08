@@ -3,9 +3,30 @@
   --background: white;
   --primary: slateblue;
   --font: rgb(44, 43, 51);
-  // --font-family: 'JetBrains Mono'
-  --font-family: 'Playfair Display';
+  --font-family: 'JetBrains Mono';
+  // --font-family: 'Playfair Display';
   --font-size: 12px;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray; 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white; 
 }
 
 * {
@@ -21,6 +42,7 @@ body {
   font-size: var(--font-size);
   background: var(--background);
   transition: 0.2s ease-in-out all;
+  overflow: hidden;
 }
 
 .cv-body {
@@ -47,29 +69,39 @@ a {
   padding: 2rem;
   max-height: 100vh;
   column-gap: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .single-column,
 .double-column {
   overflow: auto;
+  overflow-y: hidden;
+  .body-wrapper {
+    height: 100%;
+    overflow-y: auto;
+  }
 }
 
 .double-column {
   height: 100%;
   display: flex;
   flex-direction: column;
-  .section-body {
-    height: 100%;
-    column-fill: auto;
-    columns: 2;
-    column-gap: 2rem;
+  .body-wrapper {
+    padding-right: 0.5rem;
+    .section-body {
+      column-fill: auto;
+      columns: 2;
+      column-gap: 2rem;
+
+    }
   }
 }
 
 /* ALL SECTIONS */
 
 .section-title {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid lightgray;
   padding-bottom: 0.6rem;
   h2 {
@@ -87,6 +119,9 @@ a {
 }
 
 @media screen and (max-width: 1220px) {
+  body {
+    overflow: auto;
+  }
   .single-column,
   .double-column {
     overflow: unset;
@@ -126,7 +161,29 @@ a {
     overflow: unset;
     margin-bottom: 4rem;
   }
-  .double-column .section-body {
+  .double-column {
+    height: unset;
+  }
+  .double-column .body-wrapper .section-body {
     columns: 1;
+  }
+}
+
+.links {
+  a {
+    margin-right: 1rem;
+    display: inline-block;
+    position: relative;
+    &:before {
+      content: '/';
+      position: absolute;
+      left: -0.75rem;
+      opacity: 0.7;
+    }
+    &:first-of-type {
+      &:before {
+        display: none;
+      }
+    }
   }
 }

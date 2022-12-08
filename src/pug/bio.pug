@@ -1,0 +1,8 @@
+doctype html
+include _includes/head.pug
+body(data-theme="dark")#cover-letter
+  h1 Bio
+  section.cover-letter-content
+    each paragraph, index in personalInfo.bio
+      p=paragraph
+  script(src='./main.js' type='text/javascript')

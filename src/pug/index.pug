@@ -14,7 +14,7 @@ body(data-theme="dark").cv-body
         each paragraph, index in personalInfo.bio
           if (index < 2)
             p=paragraph
-        a(href="./cover-letter.html") Read full cover letter
+        a(href="./bio.html") Read full bio
       section.links
         each link in socialLinks
           a(href=link.url)=link.name
@@ -22,14 +22,19 @@ body(data-theme="dark").cv-body
     section#work-history.double-column
       section.section-title
         h2 Work History
-      section.section-body
-        each val in workData
-          section.work-item
-            h3=val.company
-            h4=val.title
-            .period=val.period
-            each paragraph in val.detail
-              p=paragraph
+      section.body-wrapper
+        section.section-body
+          each val in workData
+            section.work-item
+              h3=val.company
+              h4=val.title
+              .period=val.period
+              each paragraph in val.detail
+                p=paragraph
+              if val.links
+                section.links
+                  each link in val.links
+                    a(href=link.url)=link.name
     section#education.single-column
       section.section-title
         h2 Education
