@@ -10,11 +10,11 @@ const workData = [
     links: [
       {
         name: 'API3',
-        url: 'www.api3.org'
+        url: 'https://www.api3.org'
       },
       {
         name: 'Hardhat',
-        url: 'www.hardhat.org'
+        url: 'https://www.hardhat.org'
       },
       {
         name: 'Swapr',
@@ -26,6 +26,18 @@ const workData = [
       },
       {
         name: 'Carrot',
+        url: '#'
+      },
+      {
+        name: 'Bitcoin Hackaton - El Salvador',
+        url: '#'
+      },
+      {
+        name: 'Decentraland Metaverse Festival',
+        url: '#'
+      },
+      {
+        name: 'Decentraland Fashion Week',
         url: '#'
       },
     ]
@@ -48,6 +60,14 @@ const workData = [
       'I learned A LOT about React and the Agile approach, and I had a great experience working with a large and very talented team of developers.',
       'I also worked on maintaining the component library we used internally for building the application, so I also learned a bit about handling npm packages.',
       'Also, I leveled up on my english skills due to the daily use of the language and the classes I took at the company.'
+    ],
+    testimonials: [
+      {
+        content: 'Guido brought a level of expertise, attention to detail, and positivity to our team that we have struggled to replace. He fit in with our team as soon as he joined and quickly identified opportunities for us to improve. He also consistently provided well-prepared and organized demos that made it easy for our Experience Design team to review his work.',
+        author: 'Mollie Brien',
+        author_link: 'https://www.linkedin.com/in/mollie-brien/',
+        author_position: 'Product Manager at EY'
+      }
     ],
     links: [
       {

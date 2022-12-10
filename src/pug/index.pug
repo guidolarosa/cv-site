@@ -1,6 +1,7 @@
 doctype html
 include _includes/head.pug
 body(data-theme="dark").cv-body
+  .circle
   section.cv-content
     section#main-section.single-column
       section.section-heading
@@ -15,7 +16,13 @@ body(data-theme="dark").cv-body
           if (index < 2)
             p=paragraph
         a(href="./bio.html") Read full bio
+      section.contact
+        h2 Contact
+        .contact-links
+          a(href="mailto:guido.glarosa@gmail.com") guido.glarosa@gmail.com
+          a(href="") +54 11 6361-6161
       section.links
+        h2 Links
         each link in socialLinks
           a(href=link.url)=link.name
       #change-theme Change Theme
@@ -31,8 +38,15 @@ body(data-theme="dark").cv-body
               .period=val.period
               each paragraph in val.detail
                 p=paragraph
+              if val.testimonials
+                section.testimonials
+                  h4 Testimonials
+                  each testimonial in val.testimonials
+                    p="\"" + testimonial.content + "\""
+                    a.author(href=testimonial.author_link)=testimonial.author + ' - ' + testimonial.author_position
               if val.links
                 section.links
+                  h4 Links
                   each link in val.links
                     a(href=link.url)=link.name
     section#education.single-column

@@ -20,5 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let skillBarFill = skillBar.querySelector('.skill-level');
     let formated = 'calc(' + value + '% - 2px)';
     skillBarFill.style.width = formated;
+  };
+
+  // http://ahrengot.com/tutorials/greensock-javascript-animation
+
+var $circle = $('.circle');
+
+  function moveCircle(e) {
+    TweenLite.to($circle, 0.3, {
+      css: {
+        left: e.pageX + 12.5,
+        top: e.pageY + 12.5
+      }
+    });
   }
+
+  $(window).on('mousemove', moveCircle);
 });

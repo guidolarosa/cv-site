@@ -6,6 +6,7 @@
   overflow: auto;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
   h1 {
     margin-bottom: 2rem;
   }
@@ -14,5 +15,11 @@
     line-height: 2rem;
     font-weight: 100;
     margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  #cover-letter {
+    width: 100%;
   }
 }

@@ -50,6 +50,7 @@ body {
   background: var(--background);
   transition: 0.2s ease-in-out all;
   overflow: hidden;
+  cursor: none;
 }
 
 .cv-body {
@@ -66,6 +67,7 @@ p {
 a {
   color: var(--primary);
   text-decoration: underline;
+  cursor: none;
 }
 
 @keyframes fadeIn {
@@ -91,6 +93,21 @@ a {
   animation: fadeIn ease-out 0.25s forwards;
 }
 
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  background: white;
+  border-radius: 80%;
+  backface-visibility: hidden;
+  z-index: 3;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+}
+
 .single-column,
 .double-column {
   overflow: auto;
@@ -108,12 +125,10 @@ a {
   flex-direction: column;
 }
 .double-column .body-wrapper {
-  padding-right: 0.5rem;
+  padding-right: 1rem;
 }
 .double-column .body-wrapper .section-body {
   column-fill: auto;
-  columns: 2;
-  column-gap: 2rem;
 }
 
 /* ALL SECTIONS */
@@ -252,11 +267,21 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
   font-size: 1.2rem;
   opacity: 0.6;
 }
+#main-section h2 {
+  margin-bottom: 1rem;
+}
 #main-section .bio {
   margin-bottom: auto;
 }
 #main-section .bio a {
   margin-top: 1rem;
+}
+#main-section .contact {
+  margin-bottom: 2rem;
+}
+#main-section .contact a {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 #main-section #change-theme {
   margin-top: 1rem;
@@ -270,6 +295,9 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
     height: calc(100vh - 4rem);
     position: fixed;
     width: 30vw;
+  }
+  #main-section .contact {
+    margin-top: 4rem;
   }
 }
 @media screen and (max-width: 720px) {
@@ -306,6 +334,15 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
   padding: 0 0.4rem;
   display: inline-block;
   border-radius: 0.2rem;
+}
+.work-item .testimonials {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--primary);
+}
+.work-item .testimonials a {
+  font-size: 0.6rem;
 }
 
 /* SKILLS */
@@ -349,6 +386,7 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
   overflow: auto;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 #cover-letter h1 {
   margin-bottom: 2rem;
@@ -358,4 +396,10 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
   line-height: 2rem;
   font-weight: 100;
   margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1220px) {
+  #cover-letter {
+    width: 100%;
+  }
 }

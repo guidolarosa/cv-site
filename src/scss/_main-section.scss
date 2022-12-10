@@ -21,10 +21,20 @@
       opacity: 0.6;
     }
   }
+  h2 {
+    margin-bottom: 1rem;
+  }
   .bio {
     margin-bottom: auto;
     a {
       margin-top: 1rem;
+    }
+  }
+  .contact {
+    margin-bottom: 2rem;
+    a {
+      display: block;
+      margin-bottom: 0.5rem;
     }
   }
   #change-theme {
@@ -40,6 +50,9 @@
     height: calc(100vh - 4rem);
     position: fixed;
     width: 30vw;
+    .contact {
+      margin-top: 4rem;
+    }
   }
 }
 

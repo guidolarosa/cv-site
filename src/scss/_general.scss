@@ -43,6 +43,7 @@ body {
   background: var(--background);
   transition: 0.2s ease-in-out all;
   overflow: hidden;
+  cursor: none;
 }
 
 .cv-body {
@@ -59,6 +60,7 @@ p {
 a {
   color: var(--primary);
   text-decoration: underline;
+  cursor: none;
 }
 @keyframes fadeIn {
   0% {
@@ -86,6 +88,21 @@ a {
   animation: fadeIn ease-out 0.25s forwards;
 }
 
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  background: white;
+  border-radius: 80%;
+  backface-visibility: hidden;
+  z-index: 3;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+}
+
 .single-column,
 .double-column {
   overflow: auto;
@@ -101,12 +118,11 @@ a {
   display: flex;
   flex-direction: column;
   .body-wrapper {
-    padding-right: 0.5rem;
+    padding-right: 1rem;
     .section-body {
       column-fill: auto;
-      columns: 2;
-      column-gap: 2rem;
-
+      // columns: 2;
+      // column-gap: 2rem;
     }
   }
 }
