@@ -58,6 +58,7 @@
 
 @media screen and (max-width: 720px) {
   #main-section {
+    height: unset;
     position: static;
     width: 100%;
   }

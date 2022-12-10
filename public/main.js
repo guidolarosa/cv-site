@@ -37,5 +37,29 @@ var $circle = $('.circle');
   }
 
   $(window).on('mousemove', moveCircle);
+
+  const mobileMenu = document.querySelector('.mobile-menu')
+  const menuTrigger = document.querySelector('.mobile-menu-trigger');
+
+  menuTrigger.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      menuTrigger.innerHTML = 'Close X'
+    } else {
+      mobileMenu.classList.add('hidden');
+      menuTrigger.innerHTML = 'Go To ->'
+    }
+  });
+
+  const links = document.querySelectorAll('.mobile-menu a');
+
+  for (let i = 0; links.length; i++) {
+    links[i].addEventListener('click', (e) => {
+      e.preventDefault()
+      mobileMenu.classList.add('hidden');
+      document.querySelector('#' + e.target.getAttribute('data-target')).scrollIntoView()
+    });
+  }
 });
 },{}]},{},[1]);

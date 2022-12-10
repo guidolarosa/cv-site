@@ -2,6 +2,12 @@ doctype html
 include _includes/head.pug
 body(data-theme="dark").cv-body
   .circle
+  .mobile-menu-trigger Go To ->
+  .mobile-menu.hidden
+    a(data-target="main-section") Profile
+    a(data-target="work-history") Work History
+    a(data-target="education") Education
+    a(data-target="skills") Skills
   section.cv-content
     section#main-section.single-column
       section.section-heading
