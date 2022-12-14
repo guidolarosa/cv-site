@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // http://ahrengot.com/tutorials/greensock-javascript-animation
 
-var $circle = $('.circle');
+  var $circle = $('.circle');
 
   function moveCircle(e) {
     TweenLite.to($circle, 0.3, {
@@ -35,7 +35,7 @@ var $circle = $('.circle');
     });
   }
 
-  $(window).on('mousemove', moveCircle);
+  // $(window).on('mousemove', moveCircle);
 
   const mobileMenu = document.querySelector('.mobile-menu')
   const menuTrigger = document.querySelector('.mobile-menu-trigger');
@@ -60,17 +60,17 @@ var $circle = $('.circle');
     });
   }
 
-  const links = document.querySelectorAll('a');
-  const circle = document.querySelector('.circle');
+  // const links = document.querySelectorAll('a');
+  // const circle = document.querySelector('.circle');
 
-  for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('mouseover', (e) => {
-      e.preventDefault();
-      circle.classList.add('highlighted');
-    });
-    links[i].addEventListener('mouseout', (e) => {
-      e.preventDefault();
-      circle.classList.remove('highlighted');
-    });
-  };
+  // for (let i = 0; i < links.length; i++) {
+  //   links[i].addEventListener('mouseover', (e) => {
+  //     e.preventDefault();
+  //     circle.classList.add('highlighted');
+  //   });
+  //   links[i].addEventListener('mouseout', (e) => {
+  //     e.preventDefault();
+  //     circle.classList.remove('highlighted');
+  //   });
+  // };
 });

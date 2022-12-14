@@ -51,7 +51,6 @@ body {
   background: var(--background);
   transition: 0.2s ease-in-out all;
   overflow: hidden;
-  cursor: none;
 }
 
 .cv-body {
@@ -72,7 +71,6 @@ p {
 a {
   color: var(--primary);
   text-decoration: underline;
-  cursor: none;
 }
 
 @keyframes fadeIn {
@@ -96,36 +94,6 @@ a {
   position: relative;
   z-index: 2;
   animation: fadeIn ease-out 0.25s forwards;
-}
-
-.circle {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: 50%;
-  left: 50%;
-  margin: -25px 0 0 -25px;
-  background: white;
-  border-radius: 80%;
-  backface-visibility: hidden;
-  z-index: 3;
-  mix-blend-mode: exclusion;
-  pointer-events: none;
-  transition: 0.1s ease-in-out all;
-}
-.circle.highlighted {
-  width: 50px;
-  height: 50px;
-  transform-origin: 50% 50%;
-  transform: translate(-12.5px, -12.5px);
-}
-.circle .pointer {
-  width: 2px;
-  height: 2px;
-  position: absolute;
-  top: calc(50% - 1px);
-  left: calc(50% - 1px);
-  background: black;
 }
 
 .mobile-menu {
