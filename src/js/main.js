@@ -51,13 +51,26 @@ var $circle = $('.circle');
     }
   });
 
-  const links = document.querySelectorAll('.mobile-menu a');
-
-  for (let i = 0; links.length; i++) {
-    links[i].addEventListener('click', (e) => {
+  const mobileLinks = document.querySelectorAll('.mobile-menu a');
+  for (let i = 0; i < mobileLinks.length; i++) {
+    mobileLinks[i].addEventListener('click', (e) => {
       e.preventDefault()
       mobileMenu.classList.add('hidden');
       document.querySelector('#' + e.target.getAttribute('data-target')).scrollIntoView()
     });
   }
+
+  const links = document.querySelectorAll('a');
+  const circle = document.querySelector('.circle');
+
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener('mouseover', (e) => {
+      e.preventDefault();
+      circle.classList.add('highlighted');
+    });
+    links[i].addEventListener('mouseout', (e) => {
+      e.preventDefault();
+      circle.classList.remove('highlighted');
+    });
+  };
 });

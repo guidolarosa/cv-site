@@ -111,6 +111,21 @@ a {
   z-index: 3;
   mix-blend-mode: exclusion;
   pointer-events: none;
+  transition: 0.1s ease-in-out all;
+}
+.circle.highlighted {
+  width: 50px;
+  height: 50px;
+  transform-origin: 50% 50%;
+  transform: translate(-12.5px, -12.5px);
+}
+.circle .pointer {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: calc(50% - 1px);
+  left: calc(50% - 1px);
+  background: black;
 }
 
 .mobile-menu {
@@ -249,6 +264,7 @@ a {
   margin-right: 1rem;
   display: inline-block;
   position: relative;
+  margin-bottom: 0.5rem;
 }
 .links a:before {
   content: "/";
@@ -335,7 +351,6 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
 }
 #main-section #change-theme {
   margin-top: 1rem;
-  cursor: pointer;
   color: var(--primary);
   text-decoration: underline;
 }
