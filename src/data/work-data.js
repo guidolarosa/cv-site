@@ -22,23 +22,19 @@ const workData = [
       },
       {
         name: 'DXDao',
-        url: '#'
+        url: 'https://dxdao.eth.link/'
       },
       {
         name: 'Carrot',
-        url: '#'
-      },
-      {
-        name: 'Bitcoin Hackaton - El Salvador',
-        url: '#'
+        url: 'https://carrot-web-zeta.vercel.app/'
       },
       {
         name: 'Decentraland Metaverse Festival',
-        url: '#'
+        url: 'https://themetaversefestival.io/'
       },
       {
         name: 'Decentraland Fashion Week',
-        url: '#'
+        url: 'https://mvfw.org/'
       },
     ]
   },
