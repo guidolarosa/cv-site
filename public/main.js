@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var $circle = $('.circle');
 
-  function moveCircle(e) {
+  const moveCircle = (e) => {
     TweenLite.to($circle, 0.3, {
       css: {
         left: e.pageX + 12.5,
@@ -41,25 +41,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.querySelector('.mobile-menu')
   const menuTrigger = document.querySelector('.mobile-menu-trigger');
 
-  menuTrigger.addEventListener('click', (e) => {
-    e.preventDefault()
-    if (mobileMenu.classList.contains('hidden')) {
-      mobileMenu.classList.remove('hidden');
-      menuTrigger.innerHTML = 'Close X'
-    } else {
-      mobileMenu.classList.add('hidden');
-      menuTrigger.innerHTML = 'Go To ->'
-    }
-  });
+  const onMobileLinkClick = (e) => {
+    e.preventDefault();
+    const clickedLinkID = e.target.getAttribute('data-target');
+    navigateToSection(clickedLinkID);
+    closeMobileMenu();
+
+  }
+
+  const navigateToSection = (sectionID) => {
+    document.querySelector('#' + sectionID).scrollIntoView()
+  }
+
+  const openMobileMenu = () => {
+    mobileMenu.classList.remove('hidden');
+    menuTrigger.innerHTML = 'Close X'
+  };
+
+  const closeMobileMenu = () => {
+    mobileMenu.classList.add('hidden');
+    menuTrigger.innerHTML = 'Go To ->'
+  }
 
   const mobileLinks = document.querySelectorAll('.mobile-menu a');
   for (let i = 0; i < mobileLinks.length; i++) {
-    mobileLinks[i].addEventListener('click', (e) => {
-      e.preventDefault()
-      mobileMenu.classList.add('hidden');
-      document.querySelector('#' + e.target.getAttribute('data-target')).scrollIntoView()
-    });
-  }
+    mobileLinks[i].addEventListener('click', onMobileLinkClick);
+  };
+
+  menuTrigger.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (mobileMenu.classList.contains('hidden')) {
+      openMobileMenu()
+    } else {
+      closeMobileMenu()
+    }
+  });
 
   // const links = document.querySelectorAll('a');
   // const circle = document.querySelector('.circle');
