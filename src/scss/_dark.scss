@@ -20,8 +20,22 @@ body[data-theme='dark'] {
     }
   }
   #main-section {
-    #change-theme {
+    #change-theme,
+    #print {
       color: var(--primary-dark);
+    }
+  }
+
+  .mobile-menu-trigger {
+    background: rgba(0,0,0,.1);
+  }
+
+  .mobile-menu {
+    background: rgba(0,0,0,.1);
+    .mobile-menu-links {
+      a {
+        color: white !important;
+      }
     }
   }
    

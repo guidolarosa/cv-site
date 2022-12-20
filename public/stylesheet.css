@@ -70,7 +70,7 @@ p {
 
 a {
   color: var(--primary);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 @keyframes fadeIn {
@@ -102,7 +102,7 @@ a {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   z-index: 10;
   display: flex;
@@ -115,10 +115,20 @@ a {
   opacity: 0;
   pointer-events: none;
 }
-.mobile-menu a {
+.mobile-menu.hidden .mobile-menu-links {
+  transform: translateY(0rem);
+}
+.mobile-menu .mobile-menu-links {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  transform: translateY(-2rem);
+  transition: 0.2s ease-in-out transform;
+}
+.mobile-menu .mobile-menu-links a {
   font-size: 2rem;
   text-decoration: none;
-  color: white !important;
+  color: black !important;
   margin-bottom: 1rem;
 }
 
@@ -126,10 +136,11 @@ a {
   position: fixed;
   top: 2rem;
   right: 2rem;
-  background: black;
+  background: rgba(255, 255, 255, 0.1);
   z-index: 11;
   border: 1px solid var(--font);
   padding: 0.5rem;
+  backdrop-filter: blur(5px);
 }
 
 .single-column,
@@ -200,7 +211,7 @@ a {
     grid-area: skills;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), print {
   body {
     cursor: unset;
   }
@@ -227,6 +238,37 @@ a {
   .circle {
     display: none;
   }
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .links a:before {
+    display: none;
+  }
+}
+@media print {
+  h1, h2, h3, h4, h5, h6, p {
+    color: black;
+  }
+  #print,
+  #change-theme,
+  #links,
+  .bio a,
+  #work-history .links,
+  #main-section .links {
+    display: none;
+  }
+  .cv-content,
+  .cv-body {
+    max-height: unset;
+    height: auto;
+  }
+  .mobile-menu-trigger {
+    display: none !important;
+  }
+  #skills .technical-skills {
+    display: none !important;
+  }
 }
 .links a {
   margin-right: 1rem;
@@ -242,6 +284,42 @@ a {
 }
 .links a:first-of-type:before {
   display: none;
+}
+
+.skill .skill-bar[value="10"] .skill-level {
+  width: calc(10% - 2px) !important;
+}
+
+.skill .skill-bar[value="20"] .skill-level {
+  width: calc(20% - 2px) !important;
+}
+
+.skill .skill-bar[value="30"] .skill-level {
+  width: calc(30% - 2px) !important;
+}
+
+.skill .skill-bar[value="40"] .skill-level {
+  width: calc(40% - 2px) !important;
+}
+
+.skill .skill-bar[value="50"] .skill-level {
+  width: calc(50% - 2px) !important;
+}
+
+.skill .skill-bar[value="60"] .skill-level {
+  width: calc(60% - 2px) !important;
+}
+
+.skill .skill-bar[value="70"] .skill-level {
+  width: calc(70% - 2px) !important;
+}
+
+.skill .skill-bar[value="80"] .skill-level {
+  width: calc(80% - 2px) !important;
+}
+
+.skill .skill-bar[value="90"] .skill-level {
+  width: calc(90% - 2px) !important;
 }
 
 :root {
@@ -268,8 +346,18 @@ body[data-theme=dark] .skill-bar {
 body[data-theme=dark] .skill-bar .skill-level {
   background: var(--primary-dark);
 }
-body[data-theme=dark] #main-section #change-theme {
+body[data-theme=dark] #main-section #change-theme,
+body[data-theme=dark] #main-section #print {
   color: var(--primary-dark);
+}
+body[data-theme=dark] .mobile-menu-trigger {
+  background: rgba(0, 0, 0, 0.1);
+}
+body[data-theme=dark] .mobile-menu {
+  background: rgba(0, 0, 0, 0.1);
+}
+body[data-theme=dark] .mobile-menu .mobile-menu-links a {
+  color: white !important;
 }
 body[data-theme=dark] ::-webkit-scrollbar-thumb {
   background: gray;
@@ -310,6 +398,9 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
 #main-section .bio a {
   margin-top: 1rem;
 }
+#main-section .bio .hidden {
+  display: none;
+}
 #main-section .contact {
   margin-bottom: 2rem;
 }
@@ -317,10 +408,11 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
   display: block;
   margin-bottom: 0.5rem;
 }
-#main-section #change-theme {
+#main-section #change-theme,
+#main-section #print {
   margin-top: 1rem;
   color: var(--primary);
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1220px) {
@@ -333,11 +425,16 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
     margin-top: 4rem;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), print {
   #main-section {
     height: unset;
     position: static;
     width: 100%;
+  }
+}
+@media print {
+  .bio .hidden {
+    display: block !important;
   }
 }
 /* WORK HISTORY */
@@ -397,6 +494,15 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
   transform: translateX(1px) translateY(1px);
   width: 0px;
   transition: 0.5s ease-in-out all;
+}
+
+#skills h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+#skills h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .languages {

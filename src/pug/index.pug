@@ -5,10 +5,11 @@ body(data-theme="dark").cv-body
     .pointer
   .mobile-menu-trigger Go To ->
   .mobile-menu.hidden
-    a(data-target="main-section") Profile
-    a(data-target="work-history") Work History
-    a(data-target="education") Education
-    a(data-target="skills") Skills
+    .mobile-menu-links
+      a(data-target="main-section") Profile
+      a(data-target="work-history") Work History
+      a(data-target="education") Education
+      a(data-target="skills") Skills
   section.cv-content
     section#main-section.single-column
       section.section-heading
@@ -20,19 +21,22 @@ body(data-theme="dark").cv-body
             br
       section.bio
         each paragraph, index in personalInfo.bio
-          if (index < 2)
+          if (index < 1)
             p=paragraph
+          if (index >= 1)
+            p.hidden=paragraph
         a(href="./bio.html") Read full bio
       section.contact
         h2 Contact
         .contact-links
-          a(href="mailto:guido.glarosa@gmail.com") guido.glarosa@gmail.com
-          a(href="") +54 11 6361-6161
+          a(href="mailto:guido.glarosa@gmail.com") ✉️ guido.glarosa@gmail.com
+          a(href="") 📞 +54 11 6361-6161
       section.links
         h2 Links
         each link in socialLinks
           a(href=link.url)=link.name
-      #change-theme Change Theme
+      #change-theme 🌈 Change Theme
+      #print 🖨 Get Printable Version
     section#work-history.double-column
       section.section-title
         h2 Work History
@@ -67,15 +71,17 @@ body(data-theme="dark").cv-body
         h2 Skills
       section.section-body
         section.technical-skills
+          h3 Technical Skills
           each skill in skills
             .skill
               h4=skill.name
               .skill-bar(value=skill.level)
                 .skill-level
         section.languages
+          h3 Languages
           each language in languages
             .language
-              h2=language.name
+              h4=language.name
               p=language.level
               if (language.detail)
                 p=language.detail

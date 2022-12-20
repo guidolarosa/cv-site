@@ -55,12 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openMobileMenu = () => {
     mobileMenu.classList.remove('hidden');
-    menuTrigger.innerHTML = 'Close X'
+    menuTrigger.innerHTML = 'Close X';
+    document.body.style.overflow = 'hidden';
   };
 
   const closeMobileMenu = () => {
     mobileMenu.classList.add('hidden');
-    menuTrigger.innerHTML = 'Go To ->'
+    menuTrigger.innerHTML = 'Go To ->';
+    document.body.style.overflow = 'auto';
   }
 
   const mobileLinks = document.querySelectorAll('.mobile-menu a');
@@ -76,6 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMobileMenu()
     }
   });
+
+  const getPDFFileButton = document.querySelector('#print');
+  getPDFFileButton.addEventListener('click', () => {
+    window.print();
+  })
 
   // const links = document.querySelectorAll('a');
   // const circle = document.querySelector('.circle');

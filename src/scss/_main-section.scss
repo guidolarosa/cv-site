@@ -29,6 +29,9 @@
     a {
       margin-top: 1rem;
     }
+    .hidden {
+      display: none;
+    }
   }
   .contact {
     margin-bottom: 2rem;
@@ -37,10 +40,11 @@
       margin-bottom: 0.5rem;
     }
   }
-  #change-theme {
+  #change-theme,
+  #print {
     margin-top: 1rem;
     color: var(--primary);
-    text-decoration: underline;
+    cursor: pointer;
   }
 }
 
@@ -55,10 +59,18 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), print {
   #main-section {
     height: unset;
     position: static;
     width: 100%;
+  }
+}
+
+@media print {
+  .bio {
+    .hidden {
+      display: block !important;
+    }
   }
 }

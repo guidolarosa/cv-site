@@ -64,7 +64,7 @@ p {
 
 a {
   color: var(--primary);
-  text-decoration: underline;
+  text-decoration: none;
   // cursor: none;
 }
 @keyframes fadeIn {
@@ -129,7 +129,7 @@ a {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.5);
   backdrop-filter: blur(10px);
   z-index: 10;
   display: flex;
@@ -140,12 +140,22 @@ a {
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    .mobile-menu-links {
+      transform: translateY(0rem);
+    }
   }
-  a {
-    font-size: 2rem;
-    text-decoration: none;
-    color: white !important;
-    margin-bottom: 1rem;
+  .mobile-menu-links {
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    transform: translateY(-2rem);
+    transition: 0.2s ease-in-out transform;
+    a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: black !important;
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -153,10 +163,12 @@ a {
   position: fixed;
   top: 2rem;
   right: 2rem;
-  background: black;
+  background: rgba(255,255,255,.1);
   z-index: 11;
   border: 1px solid var(--font);
   padding: 0.5rem;
+  backdrop-filter: blur(5px);
+
 }
 
 .single-column,
@@ -234,7 +246,7 @@ a {
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), print {
   body {
     cursor: unset;
   }
@@ -261,6 +273,40 @@ a {
   .circle {
     display: none;
   }
+  .links {
+    display: flex;
+    flex-direction: column;
+    a {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@media print {
+  h1, h2, h3, h4, h5, h6, p {
+    color: black;
+  }
+  #print,
+  #change-theme,
+  #links,
+  .bio a,
+  #work-history .links,
+  #main-section .links {
+    display: none;
+  }
+  .cv-content,
+  .cv-body {
+    max-height: unset;
+    height: auto;
+  }
+  .mobile-menu-trigger {
+    display: none !important;
+  }
+  #skills .technical-skills {
+    display: none !important;
+  }
 }
 
 .links {
@@ -282,3 +328,14 @@ a {
     }
   }
 }
+
+@for $i from 1 to 10 {
+  .skill {
+    .skill-bar[value="#{$i * 10}"] {
+      .skill-level {
+        width: #{'calc(' + ($i * 10) + '% - 2px) !important'};
+      }
+    }
+  }
+}
+
