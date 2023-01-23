@@ -212,9 +212,6 @@ a {
   }
 }
 @media screen and (max-width: 720px), print {
-  body {
-    cursor: unset;
-  }
   .cv-content {
     padding: 1rem;
     display: flex;
@@ -508,16 +505,6 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
 .languages {
   margin-top: 2rem;
 }
-.languages .language {
-  margin-bottom: 1rem;
-}
-.languages .language h2 {
-  margin-bottom: 0.4rem;
-}
-.languages .language p {
-  margin-bottom: 0;
-}
-
 #cover-letter {
   width: 50%;
   margin-right: auto;

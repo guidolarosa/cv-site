@@ -247,9 +247,6 @@ a {
 }
 
 @media screen and (max-width: 720px), print {
-  body {
-    cursor: unset;
-  }
   .cv-content {
     padding: 1rem;
     display: flex;
