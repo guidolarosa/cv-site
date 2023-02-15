@@ -348,10 +348,10 @@ body[data-theme=dark] #main-section #print {
   color: var(--primary-dark);
 }
 body[data-theme=dark] .mobile-menu-trigger {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
 }
 body[data-theme=dark] .mobile-menu {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.8);
 }
 body[data-theme=dark] .mobile-menu .mobile-menu-links a {
   color: white !important;
@@ -505,6 +505,7 @@ body[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
 .languages {
   margin-top: 2rem;
 }
+
 #cover-letter {
   width: 50%;
   margin-right: auto;
