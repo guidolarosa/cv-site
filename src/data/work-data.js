@@ -49,7 +49,7 @@ const workData = [
   {
     company: 'Cognizant / Softvision',
     title: 'Frontend Developer',
-    period: 'Nov 2021 - jul 2021',
+    period: 'Nov 2019 - Jul 2021',
     detail: [
       'I worked with a large international team of developers and engineers. This gave me a world-class level experience in a industry giant such as Cognizant, and working with a highly reputable client, EY.',
       'Among my responsabilities I had to implement new feaures in the EY Canvas web application, following a very thorough process of development, testing and deployment.',
@@ -75,7 +75,7 @@ const workData = [
   {
     company: 'AdCap / Banza',
     title: 'Frontend Developer',
-    period: 'Dec 2019 - Jul 2020',
+    period: 'Jan 2019 - Nov 2019',
     detail: [
       'AdCap is a financial and investment company that has offices in Argentina, USA, Mexico, Colombia and Perú',
       'I developed all the marketing sites for the launch of a new application: Banza. I also created a customized tool to create the Banza newsletters and notification mails using node',
@@ -99,13 +99,12 @@ const workData = [
   {
     company: 'Caramba Studio',
     title: 'Assistant to the Art Director',
-    period: '2014 - 2019',
+    period: 'Jul 2018 - Dec 2018',
     detail: [
       'I worked closely with the Art Director of Caramba on one of their animation projects, Red Misterio. I prepared the backgrounds and the framing of the scenes and delivered that to the animators. I also had to re-draw the characters and props to adjust them for the different scenes. I learned a lot about Illustrator and Photoshop',
       'I also made the music for two of their projects: King of The Worlds and Animal Detective'
     ]
   },
-
 ];
 
 module.exports = workData;
