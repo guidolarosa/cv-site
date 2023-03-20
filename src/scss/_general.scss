@@ -179,19 +179,10 @@ a {
     height: 100%;
     overflow-y: auto;
   }
-}
-
-.double-column {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .body-wrapper {
+  .section-body {
+    height: 100%;
+    overflow: auto;
     padding-right: 1rem;
-    .section-body {
-      column-fill: auto;
-      // columns: 2;
-      // column-gap: 2rem;
-    }
   }
 }
 

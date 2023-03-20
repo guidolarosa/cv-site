@@ -1,6 +1,7 @@
 /* SKILLS */
 
 .skill {
+  overflow: auto;
   margin-bottom: 1rem;
   h4 {
     margin-bottom: 0.4rem;
@@ -31,5 +32,6 @@
 }
 
 .languages {
+  padding-bottom: 4rem;
   margin-top: 2rem;
 }

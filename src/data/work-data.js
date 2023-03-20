@@ -36,6 +36,10 @@ const workData = [
         name: 'Decentraland Fashion Week',
         url: 'https://mvfw.org/'
       },
+      {
+        name: 'Shadow War',
+        url: 'https://shadowwar.com'
+      },
     ]
   },
   {
